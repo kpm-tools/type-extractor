@@ -1,0 +1,49 @@
+{
+  "name": "@kpm-tools/type-extractor",
+  "version": "0.0.1",
+  "author": "Kyle McDonald",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/kpm-tools/type-extractor.git"
+  },
+  "bugs": {
+    "url": "https://github.com/kpm-tools/type-extractor/issues"
+  },
+  "homepage": "https://github.com/kpm-tools/type-extractor#readme",
+  "license": "MIT",
+  "type": "module",
+  "main": "dist/index.js",
+  "module": "dist/index.js",
+  "types": "dist/index.d.ts",
+  "scripts": {
+    "build": "tsup src/index.ts --dts --minify --format cjs,esm --clean --sourcemap",
+    "watch": "tsup src/index.ts --dts --format cjs,esm  --watch",
+    "lint": "eslint --ext .ts src",
+    "lint:fix": "eslint --ext .ts src --fix",
+    "format": "prettier src/**/*.ts",
+    "format:fix": "prettier --write src/**/*.ts",
+    "prepare": "husky install"
+  },
+  "lint-staged": {
+    "src/**/*.ts": [
+      "bun run lint:fix",
+      "bun run format:fix"
+    ]
+  },
+  "dependencies": {
+    "typedoc": "^0.25.1"
+  },
+  "devDependencies": {
+    "@changesets/cli": "^2.26.2",
+    "@trivago/prettier-plugin-sort-imports": "^4.2.0",
+    "@typescript-eslint/eslint-plugin": "^6.7.2",
+    "@typescript-eslint/parser": "^6.7.2",
+    "bun-types": "latest",
+    "eslint": "^8.49.0",
+    "husky": "^8.0.0",
+    "lint-staged": "^14.0.1",
+    "prettier": "^3.0.3",
+    "tsup": "^7.2.0",
+    "typescript": "^5.1.6"
+  }
+}
