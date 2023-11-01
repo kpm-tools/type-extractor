@@ -24,6 +24,7 @@
     "format:fix": "prettier --write src/**/*.ts",
     "changeset:add": "changeset add",
     "changeset:version": "changeset version",
+    "changeset:publish": "rm -rf ./dist && bun install && bun run build && changeset publish",
     "prepare": "husky install"
   },
   "lint-staged": {
