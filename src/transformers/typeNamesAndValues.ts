@@ -40,10 +40,10 @@ function typeNamesAndValues(_raw: TypeDocRawOutput) {
 
             if (child?.type?.types?.length > 0) {
               child.type.types.forEach((__: any) => {
-                if (__.typeArguments.length > 0) {
-                  __.typeArguments.forEach((___: any) => {
+                if (__?.typeArguments?.length > 0) {
+                  __?.typeArguments?.forEach((___: any) => {
                     ___?.types &&
-                      ___?.types.forEach((____: any) => {
+                      ___?.types?.forEach((____: any) => {
                         ____?.declaration?.children.forEach((_____: any) => {
                           childType.children.push({
                             name: _____.name,
